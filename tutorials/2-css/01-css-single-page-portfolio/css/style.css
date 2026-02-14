@@ -1,0 +1,120 @@
+/* CSS resets */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* respect use font size preferences */
+html {
+    font-size: 100%;
+}
+
+/* General CSS */
+
+body {
+
+    background-color: beige;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+}
+
+header {
+    padding: 6rem;
+    margin-bottom: 3rem;
+    background-color: #fff;
+    background: #2A7B9B;
+    background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+    color: #533232;
+    border-bottom: #000 1px solid;
+    /* text-align: center; */
+}
+
+header h1 {
+    font-size: 3rem;
+}
+
+nav {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+main {
+    max-width: 60rem;
+    margin: 2rem auto;
+}
+
+.about-section,
+.portfolio-section,
+.contact-section {
+    margin-bottom: 4rem;
+}
+
+.about-content,
+.portfolio-content,
+.contact-content {
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.about-content h2,
+.portfolio-content h2,
+.contact-content h2 {
+    padding: 2rem 0;
+
+}
+
+.portfolio-item {
+    margin-bottom: 5rem;
+    background-color: white;
+    padding: 4rem;
+    text-align: justify;
+    border: 2px #000 solid;
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, .2)
+    
+}
+
+.portfolio-item img {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+    border-radius: .5rem;
+    
+}
+
+.portfolio-item h3 {
+    margin: 1rem 0;
+}
+
+.portfolio-item p {
+    font-size: 1.2rem;
+}
+
+.about-section {
+    background-color: #fff;
+}
+
+.portfolio-section {
+    background-color: gray;
+}
+
+footer {
+    background-color: #333;
+    color: #eee;
+    padding: 1rem;
+    text-align: end;
+}
+
+footer p {
+    font-size: 1.3rem;
+}
