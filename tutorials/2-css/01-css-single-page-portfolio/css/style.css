@@ -1,4 +1,24 @@
-/* CSS resets */
+/* -------------- color palette ------------ */
+
+:root {
+    --bg-color-1: #fff;
+    --bg-color-2: #e9ebe8;
+    --font: #111;
+    --accent-1: #5663db;
+    --accent-2: #d3acfa;
+    --dark: #222;
+}
+
+
+
+
+
+/* ------------ CSS resets ----------------- */
+
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -13,25 +33,40 @@ html {
 
 body {
 
-    background-color: beige;
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bg-color-1);
+    color: var(--font);
+    font-family: "Montserrat", sans-serif;
     font-size: 1.5rem;
     line-height: 2.5rem;
+    text-align:justify
 }
 
+@media(max-width: 700px) {
+    body{
+        font-size: 1.3rem;
+    }
+
+}
 header {
     padding: 6rem;
     margin-bottom: 3rem;
-    background-color: #fff;
-    background: #2A7B9B;
-    background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
-    color: #533232;
+    /* background-color: #fff; */
     border-bottom: #000 1px solid;
     /* text-align: center; */
 }
 
+@media (max-width: 700px) {
+    header{
+        padding-left: 2rem;
+    }
+}
+
 header h1 {
     font-size: 3rem;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: var(--accent-1);
+    font-family: "Outfit", sans-serif;
 }
 
 nav {
@@ -45,11 +80,34 @@ nav a {
     color: #000;
     display: inline-block;
     margin: 0 1rem;
+    transition: all .5s ease
 }
 
+nav a:hover {
+    background-color: var(--accent-1);
+    transform: scale(1.05);
+}
+
+@media (max-width: 750px){ 
+    nav a {
+        margin: 0 .5rem;
+    }
+}
 main {
-    max-width: 60rem;
-    margin: 2rem auto;
+    margin: 0;
+}
+
+@media (max-width: 850px) {
+    main {
+        margin: 2rem;
+    }
+
+}
+
+@media (max-width: 600px) {
+    main{
+        margin: 1rem;
+    }
 }
 
 .about-section,
@@ -69,19 +127,34 @@ main {
 .about-content h2,
 .portfolio-content h2,
 .contact-content h2 {
+    margin: 2rem 0;
     padding: 2rem 0;
+    background-color: var(--accent-1);
+    border-radius: 3rem;
+    display: inline-block;
+
 
 }
 
 .portfolio-item {
     margin-bottom: 5rem;
-    background-color: white;
+    background-color: var(--bg-color-2);
     padding: 4rem;
     text-align: justify;
-    border: 2px #000 solid;
-    border-radius: 0.5rem;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, .2)
-    
+    border-radius: .5rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, .2)
+}
+
+@media(max-width: 800px) {
+    .portfolio-item{
+        padding: 3rem;
+    }
+}
+
+@media(max-width: 600px) {
+    .portfolio-item{
+        padding: 2rem;
+    }
 }
 
 .portfolio-item img {
@@ -89,7 +162,7 @@ main {
     margin: 0 auto;
     display: block;
     border-radius: .5rem;
-    
+
 }
 
 .portfolio-item h3 {
@@ -105,11 +178,11 @@ main {
 }
 
 .portfolio-section {
-    background-color: gray;
+    background-color: var(--bg-color-2)
 }
 
 footer {
-    background-color: #333;
+    background-color: var(--dark);
     color: #eee;
     padding: 1rem;
     text-align: end;
@@ -117,4 +190,15 @@ footer {
 
 footer p {
     font-size: 1.3rem;
+}
+
+
+/* style classes */
+
+.accent-1 {
+    color: var(--accent-1);
+}
+
+.accent-2 {
+    color: var(--accent-2);
 }
