@@ -48,7 +48,7 @@
             afterShow: null,
             afterHide: null,
             onChange: null,
-            overlayBackgroundColor: 'rgba(0,0,0,.8)',
+            overlayBackgroundColor: 'rgba(75, 202, 202, 0.8)',
             closeX: closeX,
             leftArrow: leftArrow,
             rightArrow: rightArrow,
