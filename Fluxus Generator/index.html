@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fluxus Poem Generator</title>
+  <style>
+    :root {
+      --bg: #f7f4ed;
+      --panel: #fffdf8;
+      --text: #1d1d1d;
+      --muted: #666;
+      --border: #d9d3c7;
+      --accent: #222;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+
+    h1 {
+      font-size: 2.1rem;
+      margin: 0 0 8px;
+    }
+
+    .subtitle {
+      margin: 0 0 24px;
+      color: var(--muted);
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.04);
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 260px;
+      resize: vertical;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+      font: inherit;
+      background: white;
+      color: var(--text);
+    }
+
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      flex-wrap: wrap;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: white;
+      border-radius: 999px;
+      padding: 10px 16px;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    button.secondary {
+      background: transparent;
+      color: var(--accent);
+    }
+
+    .output {
+      white-space: pre-wrap;
+      min-height: 220px;
+      font-size: 1.02rem;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .status-error {
+      color: #8a2f2f;
+    }
+
+    @media (max-width: 700px) {
+      .meta {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Fluxus Poem Generator</h1>
+    <p class="subtitle">Paste text, generate a Fluxus-style score, and read the result below.</p>
+
+    <section class="panel">
+      <label for="corpus">Input text</label>
+      <textarea id="corpus" maxlength="50000" placeholder="Paste up to 50,000 characters here..."></textarea>
+      <div class="meta">
+        <div id="limitNote">Maximum input: 50,000 characters</div>
+        <div id="charCount">0 / 50,000</div>
+      </div>
+      <div class="button-row">
+        <button id="generateBtn">Generate</button>
+        <button id="clearBtn" class="secondary">Clear</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <label>Fluxus output</label>
+      <div id="output" class="output muted">Your poem will appear here.</div>
+    </section>
+  </div>
+
+  <script>
+    class FluxusPoemGenerator {
+      constructor(corpusText) {
+        this.stopwords = new Set([
+          "the", "a", "an", "and", "or", "but", "if", "then", "than", "to", "of",
+          "in", "on", "at", "by", "for", "with", "from", "into", "onto", "is",
+          "are", "was", "were", "be", "been", "being", "as", "it", "this", "that",
+          "these", "those", "you", "your", "i", "we", "they", "he", "she", "them",
+          "his", "her", "our", "their", "not", "no", "yes", "do", "does", "did",
+          "have", "has", "had", "will", "would", "can", "could", "should", "may",
+          "might", "must", "shall", "about", "over", "under", "again", "very"
+        ]);
+
+        this.actions = [
+          "listen to", "hold", "drop", "repeat", "forget", "count", "observe",
+          "hide", "carry", "fold", "touch", "erase", "wait for", "hum to",
+          "arrange", "misplace", "offer", "rename", "measure", "leave"
+        ];
+
+        this.qualifiers = [
+          "slowly", "without explanation", "as if it matters", "for exactly one minute",
+          "until the room changes", "in silence", "twice", "with great care",
+          "by accident", "as a ritual", "before noon", "without looking"
+        ];
+
+        this.openings = [
+          "Instruction:", "Event:", "Score:", "Proposal:",
+          "Exercise:", "Small event:", "For today:", "Fluxus score:"
+        ];
+
+        this.tokens = this.tokenize(corpusText).slice(0, 8000);
+        this.wordCounts = this.countWords(this.tokens.filter(word => word.length > 2));
+        this.words = Object.entries(this.wordCounts)
+          .filter(([word]) => !this.stopwords.has(word))
+          .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+          .slice(0, 200)
+          .map(([word]) => word);
+      }
+
+      tokenize(text) {
+        const matches = text.toLowerCase().match(/[a-z']+/g);
+        return matches || [];
+      }
+
+      countWords(words) {
+        const counts = {};
+        for (const word of words) {
+          counts[word] = (counts[word] || 0) + 1;
+        }
+        return counts;
+      }
+
+      choice(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+      }
+
+      capitalize(text) {
+        return text.charAt(0).toUpperCase() + text.slice(1);
+      }
+
+      pickObject() {
+        if (!this.words.length) {
+          return this.choice(["room", "paper", "silence", "chair", "window"]);
+        }
+        return this.choice(this.words);
+      }
+
+      line() {
+        const pattern = this.choice([
+          "{action} {object}.",
+          "{action} the {object}.",
+          "{action} {object} {qualifier}.",
+          "{action} the {object} {qualifier}."
+        ]);
+
+        return pattern
+          .replace("{action}", this.capitalize(this.choice(this.actions)))
+          .replace("{object}", this.pickObject())
+          .replace("{qualifier}", this.choice(this.qualifiers));
+      }
+
+      generatePoem() {
+        const title = `${this.capitalize(this.pickObject())} Score`;
+        const lines = Math.floor(Math.random() * 3) + 3;
+        const poem = [title, "", this.choice(this.openings)];
+
+        for (let i = 0; i < lines; i++) {
+          poem.push(this.line());
+        }
+
+        return poem.join("\n");
+      }
+    }
+
+    const MAX_CHARS = 50000;
+    const corpusEl = document.getElementById("corpus");
+    const charCountEl = document.getElementById("charCount");
+    const outputEl = document.getElementById("output");
+
+    function updateCharCount() {
+      const current = corpusEl.value.length;
+      charCountEl.textContent = `${current.toLocaleString()} / ${MAX_CHARS.toLocaleString()}`;
+      charCountEl.className = current >= MAX_CHARS ? "status-error" : "";
+    }
+
+    corpusEl.addEventListener("input", updateCharCount);
+
+    document.getElementById("generateBtn").addEventListener("click", () => {
+      const corpus = corpusEl.value.trim();
+      if (!corpus) {
+        outputEl.textContent = "Please paste some text into the input box first.";
+        outputEl.classList.add("muted");
+        return;
+      }
+
+      const generator = new FluxusPoemGenerator(corpus);
+      outputEl.textContent = generator.generatePoem();
+      outputEl.classList.remove("muted");
+    });
+
+    document.getElementById("clearBtn").addEventListener("click", () => {
+      corpusEl.value = "";
+      outputEl.textContent = "Your poem will appear here.";
+      outputEl.classList.add("muted");
+      updateCharCount();
+    });
+
+    updateCharCount();
+  </script>
+</body>
+</html>
