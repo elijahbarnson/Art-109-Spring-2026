@@ -369,3 +369,15 @@ footer img {
         align-items: center;
     }
 }
+
+#alien-sketch-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+#alien-sketch-container canvas {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem;
+}
