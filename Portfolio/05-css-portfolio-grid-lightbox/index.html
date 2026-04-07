@@ -11,7 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/baguetteBox.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
 </head>
 
 <body>
@@ -24,14 +24,15 @@
                 <button class="hamburger">≡</button>
                 <ul class="nav-menu">
                     <li><a href="#about-section">About</a></li>
-                    <li><a href="#portfolio-section">Work</a></li>
+                    <li><a href="#photo-section">Photo & Editing</a></li>
+                    <li><a href="#video-section">Video & Animation</a></li>
+                    <li><a href="#illustration-section">Illustration</a></li>
                     <li><a href="#contact-section">Contact</a></li>
                 </ul>
             </div>
-
         </nav>
-
     </header>
+
     <main>
         <section class="about-section" id="about-section">
             <div class="about-content">
@@ -42,132 +43,216 @@
                     and love video editing.</p>
             </div>
         </section>
-        <section class="portolio-section" id="portfolio-section">
+
+        <section class="portfolio-section" id="photo-section">
             <div class="portfolio-content">
-                <h2>Photo</h2>
+                <h2>Photo & Editing</h2>
                 <div class="flex-container-grid">
                     <div class="portfolio-item flex-item-grid">
-                        <a href="images/bubbles.jpg" data-caption="Water in the fountain"><img src="images/bubbles.jpg"
-                                alt="Black and white photo of bubbles"></a>
+                        <a href="images/bubbles.jpg" class="glightbox" data-caption="Water in the fountain">
+                            <img src="images/bubbles.jpg" alt="Black and white photo of bubbles">
+                        </a>
                         <h3>Close</h3>
-                        <p>A photo taken of the founatin at SJSU during my studies in black and white photography.</p>
+                        <p>A photo taken of the water founatin at SJSU...</p>
+                    </div>
 
-                    </div>
                     <div class="portfolio-item flex-item-grid">
-                        <a href="images/droplets.jpg" data-caption="Morning reflection of rain on a rich black table"><img
-                                src="images/droplets.jpg" alt="Water droplets reflecting sunlight"> </a>
-                        <h3>Sitting</h3>
-                        <p>Description of Work</p>
+                        <a href="images/droplets.jpg" class="glightbox"
+                            data-caption="Morning reflection of rain on a rich black table">
+                            <img src="images/droplets.jpg" alt="Water droplets reflecting sunlight">
+                        </a>
+                        <h3>Reflect</h3>
+                        <p>Water droplets on a black table after a fresh rain...</p>
+                    </div>
 
-                    </div>
                     <div class="portfolio-item flex-item-grid">
-                        <a href="images/Ghost-LampInfinite.gif" data-caption="Giants"><img
-                                src="images/Ghost-LampInfinite.gif" alt="3 Giants Towering over a Cliffside"> </a>
-                        <h3>Work Title</h3>
-                        <p>Description of Work</p>
+                        <a href="images/papers.jpg" class="glightbox" data-caption="Giants">
+                            <img src="images/papers.jpg" alt="Students walking in front of torn pages">
+                        </a>
+                        <h3>Ripped</h3>
+                        <p>A piece from my photo studies...</p>
+                    </div>
 
-                    </div>
                     <div class="portfolio-item flex-item-grid">
-                        <a href="projects/project-template"><img src="images/giants.jpg"
-                                alt="3 Giants Towering over a Cliffside">
-                            <h3>Work Title</h3>
-                            <p>Description of Work</p>
+                        <a href="images/panes.jpg" class="glightbox">
+                            <img src="images/panes.jpg" alt="A blurred photo...">
                         </a>
+                        <h3>Panes</h3>
+                        <p>Sunlight beaming through square window panes...</p>
                     </div>
+
                     <div class="portfolio-item flex-item-grid">
-                        <a href="projects/project-template"><img src="images/giants.jpg"
-                                alt="3 Giants Towering over a Cliffside">
-                            <h3>Giants</h3>
-                            <p>One of my first works in photoshop</p>
+                        <a href="images/splash.jpg" class="glightbox">
+                            <img src="images/splash.jpg" alt="Water droplets splashing...">
                         </a>
+                        <h3>Jut</h3>
+                        <p>A dramatic shot of another fountain...</p>
                     </div>
+
                     <div class="portfolio-item flex-item-grid">
-                        <a href="projects/project-template"><img src="images/giants.jpg"
-                                alt="3 Giants Towering over a Cliffside">
-                            <h3>Work Title</h3>
-                            <p>Description of Work</p>
+                        <a href="images/light-ring.jpg" class="glightbox">
+                            <img src="images/light-ring.jpg" alt="A blurred photo...">
                         </a>
+                        <h3>Outline</h3>
+                        <p>A photo experiment with light and long exposure...</p>
                     </div>
+
                     <div class="portfolio-item flex-item-grid">
-                        <a href="projects/project-template"><img src="images/giants.jpg"
-                                alt="3 Giants Towering over a Cliffside">
-                            <h3>Work Title</h3>
-                            <p>Description of Work</p>
+                        <a href="images/nf-beige.png" class="glightbox">
+                            <img src="images/nf-beige.png" alt="NF poster">
                         </a>
+                        <h3>NF</h3>
+                        <p>A dramatic theoretical advertisement...</p>
                     </div>
+
                     <div class="portfolio-item flex-item-grid">
-                        <a href="projects/project-template"><img src="images/giants.jpg"
-                                alt="3 Giants Towering over a Cliffside">
-                            <h3>Work Title</h3>
-                            <p>Description of Work</p>
+                        <a href="images/nf-black.png" class="glightbox">
+                            <img src="images/nf-black.png" alt="NF poster">
                         </a>
+                        <h3>NF</h3>
+                        <p>A dramatic theoretical advertisement...</p>
+                    </div>
+
+                    <div class="portfolio-item flex-item-grid">
+                        <a href="images/giants.jpg" class="glightbox">
+                            <img src="images/giants.jpg" alt="Double exposure">
+                        </a>
+                        <h3>Giants</h3>
+                        <p>One of my first projects using the pen tool...</p>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="portolio-section" id="portfolio-section">
+
+        <section class="portfolio-section" id="video-section">
             <div class="portfolio-content">
-                <h2>My Work</h2>
+                <h2>Video & Animation</h2>
                 <div class="flex-container-grid">
                     <div class="portfolio-item flex-item-grid">
-                        <a href="images/giants.jpg" data-caption="Caption for Lightbox"><img src="images/giants.jpg"
-                                alt="3 Giants Towering over a Cliffside"></a>
-                        <h3>Giants</h3>
-                        <p>One of my first works in photoshop</p>
+                        <a href="images/avatar-edit.mp4" class="glightbox" data-caption="Caption for Lightbox">
+                            <img src="images/aang-vs-ozai.jpg" alt="A video edit...">
+                        </a>
+                        <h3>The Final Battle</h3>
+                        <p>The final battle of Aang and Fire Lord Ozai... Song credit: Company, by Oddly Godly.</p>
+                    </div>
 
+                    <div class="portfolio-item flex-item-grid">
+                        <a href="https://www.youtube.com/watch?v=sU64aO629oE" class="glightbox" data-caption="Caption for Lightbox">
+                            <img src="images/covid_thumb.png" alt="Longboarding moment">
+                        </a>
+                        <h3>Repeat</h3>
+                        <p>This was a reenactment of my experience during the COVID lockdown...</p>
                     </div>
                     <div class="portfolio-item flex-item-grid">
-                        <a href="images/projection-sitting.jpg" data-caption="Caption for Lightbox"><img
-                                src="images/projection-sitting.jpg" alt="Silhoutte in front of projection"> </a>
-                        <h3>Sitting</h3>
-                        <p>Description of Work</p>
+                        <a href="images/sitting/video.mp4" class="glightbox" data-gallery="illustration-series"
+                            data-caption="Video of projection piece">
+                            <img src="images/sitting/center2.jpeg" alt="A projection project about media and life.">
+                            <h3>Sitting</h3>
+                            <p>Scroll through the collection of the live exhibit and original animation.</p>
+                        </a>
+                    </div>
 
-                    </div>
-                    <div class="portfolio-item flex-item-grid">
-                        <a href="images/Ghost-LampInfinite.gif" data-caption="Giants"><img
-                                src="images/Ghost-LampInfinite.gif" alt="3 Giants Towering over a Cliffside"> </a>
-                        <h3>Work Title</h3>
-                        <p>Description of Work</p>
+                    <a href="images/sitting/left.jpeg" class="glightbox" data-gallery="illustration-series"
+                        data-caption="Left side photo of piece" style="display: none;"></a>
 
+                    <a href="images/sitting/right.jpeg" class="glightbox" data-gallery="illustration-series"
+                        data-caption="Right side photo of piece" style="display: none;"></a>
+
+                    <a href="images/sitting/animation.mp4" class="glightbox" data-gallery="illustration-series"
+                        data-caption="Illustration Series - Video Piece" style="display: none;"></a>
+
+                    <div class="portfolio-item flex-item-grid">
+                        <a href="https://www.youtube.com/watch?v=_tMyxbUdatI" class="glightbox" data-caption="Sound film">
+                            <img src="images/moon.png" alt="Sound film">
+                        </a>
+                        <h3>Point</h3>
+                        <p>A short video about the mundanity of a day.</p>
+                    </div>
+
+                    <div class="portfolio-item flex-item-grid">
+                        <a href="images/Ghost-LampInfinite.gif" class="glightbox" data-caption="A body floating...">
+                            <img src="images/Ghost-LampInfinite.gif" alt="Ghostlight">
+                        </a>
+                        <h3>Ghostlight</h3>
+                        <p>Unsettling, mysterious, and calm.</p>
+                    </div>
+
+                    <div class="portfolio-item flex-item-grid">
+                        <a href="images/project2.mp4" class="glightbox" data-caption="Abstract coded animation">
+                            <img src="images/animation_thumb.png" alt="Motion">
+                        </a>
+                        <h3>Motion</h3>
+                        <p>This was my first time creating algorithm-based animation...</p>
                     </div>
                     <div class="portfolio-item flex-item-grid">
-                        <a href="projects/project-template"><img src="images/giants.jpg"
-                                alt="3 Giants Towering over a Cliffside">
-                            <h3>Work Title</h3>
-                            <p>Description of Work</p>
+                        <a href="images/bouncing-ball.mp4" class="glightbox" data-caption="A simple bouncing ball.">
+                            <img src="images/bouncing-ball.png" alt="A simple bouncing ball.">
                         </a>
-                    </div>
-                    <div class="portfolio-item flex-item-grid">
-                        <a href="projects/project-template"><img src="images/giants.jpg"
-                                alt="3 Giants Towering over a Cliffside">
-                            <h3>Giants</h3>
-                            <p>One of my first works in photoshop</p>
-                        </a>
-                    </div>
-                    <div class="portfolio-item flex-item-grid">
-                        <a href="projects/project-template"><img src="images/giants.jpg"
-                                alt="3 Giants Towering over a Cliffside">
-                            <h3>Work Title</h3>
-                            <p>Description of Work</p>
-                        </a>
-                    </div>
-                    <div class="portfolio-item flex-item-grid">
-                        <a href="projects/project-template"><img src="images/giants.jpg"
-                                alt="3 Giants Towering over a Cliffside">
-                            <h3>Work Title</h3>
-                            <p>Description of Work</p>
-                        </a>
-                    </div>
-                    <div class="portfolio-item flex-item-grid">
-                        <a href="projects/project-template"><img src="images/giants.jpg"
-                                alt="3 Giants Towering over a Cliffside">
-                            <h3>Work Title</h3>
-                            <p>Description of Work</p>
-                        </a>
+                        <h3>Bounce</h3>
+                        <p>A simple animation demonstration in After Effects.</p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section class="portfolio-section" id="illustration-section">
+            <div class="portfolio-content">
+                <h2>Illustration</h2>
+                <div class="flex-container-grid">
+                    <div class="portfolio-item flex-item-grid">
+                        <a href="images/rhino.png" class="glightbox" data-caption="A word trace of a Rhino.">
+                            <img src="images/rhino.png" alt="A word trace of a Rhino.">
+                        </a>
+                        <h3>Rhino</h3>
+                        <p>A basic word tracing of a Rhino, designed in Illustrator.</p>
+                    </div>
+
+                    <div class="portfolio-item flex-item-grid">
+                        <a href="images/defeated.png" class="glightbox" data-caption="idea.">
+                            <img src="images/defeated.png"
+                                alt="A sketch of a man with his head down, and a light bulb above his head.">
+                        </a>
+                        <h3>idea.</h3>
+                        <p>A representation of being surrounded by creative tools, having ideas, but drained mentally
+                            and physically.</p>
+                    </div>
+
+                    <div class="portfolio-item flex-item-grid">
+                        <a href="images/storybook.jpg" class="glightbox"
+                            data-caption="A short comic about a man saving his village.">
+                            <img src="images/storybook.jpg" alt="A short comic about a man saving his village.">
+                        </a>
+                        <h3>Storybook</h3>
+                        <p>A conceptual childrens book I illustrated.</p>
+                    </div>
+
+                    <div class="portfolio-item flex-item-grid">
+                        <a href="images/draw-tool.png" class="glightbox" data-caption="Algorithmic line patterns.">
+                            <img src="images/draw-tool.png" alt="Algorithmic line patterns.">
+                        </a>
+                        <h3>Algorithmic Line Tool</h3>
+                        <p>A couple of screenshots while playing with an algorithmic line tool I designed in p5.js.</p>
+                    </div>
+
+                    <div class="portfolio-item flex-item-grid">
+                        <a href="images/NeoNinja.png" class="glightbox" data-caption="A colorful cyber-ninja.">
+                            <img src="images/NeoNinja.png" alt="A colorful cyber-ninja.">
+                        </a>
+                        <h3>Neo-Ninja</h3>
+                        <p>One of my first illustrations in Adobe Illustrator.</p>
+                    </div>
+
+                    <div class="portfolio-item flex-item-grid">
+                        <a href="images/MyNeoTokyo.png" class="glightbox" data-caption="A neon city.">
+                            <img src="images/MyNeoTokyo.png" alt="A neon city.">
+                        </a>
+                        <h3>Neo-Tokyo</h3>
+                        <p>A setting that Neo-Ninja may be from... Done in Adobe Illustrator</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="contact-section" id="contact-section">
             <div class="contact-content">
                 <h2>Contact Me</h2>
@@ -175,6 +260,7 @@
             </div>
         </section>
     </main>
+
     <footer class="flex-container">
         <p>2025 Eli Barnson &copy;</p>
         <div class="social-links">
@@ -183,12 +269,17 @@
             <a href="#"><img src="images/icon-logo-youtube.png" alt=""></a>
         </div>
     </footer>
+
     <script src="js/hamburger.js"></script>
-    <script src="js/baguetteBox.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script>
-        baguetteBox.run(".flex-container-grid", {
-            captions: true
-        })
+        const lightbox = GLightbox({
+            selector: '.glightbox',
+            loop: true,
+            closeButton: true,
+            keyboardNavigation: true,
+            closeOnOutsideClick: true
+        });
     </script>
 </body>
 
