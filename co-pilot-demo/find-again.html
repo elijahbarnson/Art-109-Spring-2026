@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Find Again</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div id="bubbles-bg"></div>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="nav-link" href="index.html">A Starting Point</a>
+      <a class="nav-link" href="paint-yourself.html">Paint Yourself</a>
+      <a class="nav-link" href="find-again.html">Find Again</a>
+    </nav>
+    <h1 class="page-title">Find Again</h1>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <label class="prompt-label" for="find-journal">Edit / paste your journal here (this page will indefinitely
+        re-type and fade words).</label>
+      <textarea id="find-journal" class="large-textarea"></textarea>
+
+      <canvas id="find-canvas" class="find-canvas"></canvas>
+
+      <div class="controls">
+        <label class="small">Typing loop sound:
+          <input id="type-sound-file" type="file" accept="audio/*">
+        </label>
+        <button id="stop-animation">Stop</button>
+      </div>
+    </section>
+  </main>
+
+  <audio id="type-sound" src="audio/type-loop.wav" loop preload="auto"></audio>
+  <audio id="ambient-music" src="audio/background-music.mp3" loop preload="auto"></audio>
+
+  <script src="js/bubbles.js"></script>
+  <script src="js/find-again.js"></script>
+</body>
+
+</html>

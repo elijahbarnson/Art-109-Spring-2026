@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Paint Yourself</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div id="bubbles-bg"></div>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="nav-link" href="index.html">A Starting Point</a>
+      <a class="nav-link" href="paint-yourself.html">Paint Yourself</a>
+      <a class="nav-link" href="find-again.html">Find Again</a>
+    </nav>
+    <h1 class="page-title">Paint Yourself</h1>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <p class="hint">Drag across the canvas to draw. The words you typed on the first page will wisps around. Click canvas to toggle drawing mode.</p>
+
+      <canvas id="paint-canvas" class="paint-canvas"></canvas>
+
+      <div class="controls">
+        <label class="small">Drag sound:
+          <input id="drag-sound-file" type="file" accept="audio/*">
+        </label>
+        <button id="clear-canvas">Clear</button>
+      </div>
+    </section>
+  </main>
+
+  <audio id="drag-sound" src="audio/drag-sfx.wav" preload="auto"></audio>
+  <audio id="ambient-music" src="audio/background-music.mp3" loop preload="auto"></audio>
+
+  <script src="js/bubbles.js"></script>
+  <script src="js/paint-yourself.js"></script>
+</body>
+
+</html>

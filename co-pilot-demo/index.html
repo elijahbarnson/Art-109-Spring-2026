@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>A Starting Point</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div id="bubbles-bg"></div>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="nav-link" href="index.html">A Starting Point</a>
+      <a class="nav-link" href="paint-yourself.html">Paint Yourself</a>
+      <a class="nav-link" href="find-again.html">Find Again</a>
+    </nav>
+    <h1 class="page-title">A Starting Point</h1>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <label class="prompt-label" for="journal">Journal prompt — type at least 100 words about:
+        your happiest parts of the week, saddest parts, and what you're stressed about.</label>
+
+      <textarea id="journal" class="large-textarea" placeholder="Begin typing..." autofocus></textarea>
+
+      <div class="controls">
+        <label class="small">Key sound:
+          <input id="key-sound-file" type="file" accept="audio/*">
+        </label>
+        <span id="word-count">Words: 0</span>
+      </div>
+
+      <p class="hint">Every key press triggers the key sound. Your text is saved automatically and will be used on other pages.</p>
+    </section>
+  </main>
+
+  <audio id="key-sound" src="audio/key-press.wav" preload="auto"></audio>
+  <audio id="ambient-music" src="audio/background-music.mp3" loop preload="auto"></audio>
+
+  <script src="js/bubbles.js"></script>
+  <script src="js/starting-point.js"></script>
+</body>
+
+</html>
