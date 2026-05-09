@@ -1,0 +1,22 @@
+export const onboardingQuestions = [
+  "How would you describe yourself in a few sentences?",
+  "What are three values that matter most to you?",
+  "What motivates you when things get difficult?",
+  "What kind of work or projects energize you?",
+  "How do you usually make important decisions?",
+  "What is one lesson you learned from failure?",
+  "What is a story from your life that shaped who you are?",
+  "How do you like to help other people?",
+  "What topics do you love talking about?",
+  "What are your biggest goals right now?",
+  "How would your friends describe your personality?",
+  "What tone should your chatbot use when responding?",
+  "How do you handle stress?",
+  "What are some phrases or words you commonly use?",
+  "What should your chatbot avoid claiming about you?",
+  "What should your chatbot say when it does not know enough?",
+  "What is something you believe strongly?",
+  "What is something you are still learning?",
+  "What makes you feel proud?",
+  "What should someone feel after talking with this chatbot?"
+];
