@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Only Door That Opens</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="stage">
+    <section class="intro" aria-label="Artwork title">
+      <p class="eyebrow">first touch / midnight ritual</p>
+      <h1>The Only Door That Opens</h1>
+      <p>Hover. Choose. Try to leave.</p>
+    </section>
+
+    <section class="phone" aria-label="Interactive phone screen">
+      <div class="phone-frame">
+        <div class="notch"></div>
+        <div class="screen" id="screen">
+          <header class="status-bar">
+            <span>12:20</span>
+            <span class="status-icons">◖◗ 77%</span>
+          </header>
+
+          <section class="lock-text">
+            <p>Monday, May 11</p>
+            <h2>12:20</h2>
+          </section>
+
+          <section class="apps" aria-label="Apps">
+            <button class="app" data-app="Instagram"><span class="icon instagram">◎</span><span>Instagram</span></button>
+            <button class="app" data-app="TikTok"><span class="icon tiktok">♪</span><span>TikTok</span></button>
+            <button class="app youtube" data-app="YouTube" data-open="true"><span class="icon youtube-icon"></span><span>YouTube</span></button>
+            <button class="app" data-app="Safari"><span class="icon safari">⌖</span><span>Safari</span></button>
+
+            <button class="app" data-app="Reddit"><span class="icon reddit">●</span><span>Reddit</span></button>
+            <button class="app" data-app="Discord"><span class="icon discord">☾</span><span>Discord</span></button>
+            <button class="app" data-app="Messages"><span class="icon messages">✉</span><span>Messages</span></button>
+            <button class="app" data-app="Mail"><span class="icon mail">✉</span><span>Mail</span></button>
+
+            <button class="app" data-app="Spotify"><span class="icon spotify">♬</span><span>Spotify</span></button>
+            <button class="app" data-app="Netflix"><span class="icon netflix">N</span><span>Netflix</span></button>
+            <button class="app" data-app="Maps"><span class="icon maps">⌁</span><span>Maps</span></button>
+            <button class="app" data-app="Weather"><span class="icon weather">☁</span><span>Weather</span></button>
+
+            <button class="app" data-app="Photos"><span class="icon photos">✽</span><span>Photos</span></button>
+            <button class="app" data-app="Notes"><span class="icon notes">≡</span><span>Notes</span></button>
+            <button class="app" data-app="Camera"><span class="icon camera">◉</span><span>Camera</span></button>
+            <button class="app" data-app="Settings"><span class="icon settings">⚙</span><span>Settings</span></button>
+          </section>
+
+          <aside class="error-card" id="errorCard" aria-live="polite">
+            <p class="error-title">error</p>
+            <p id="errorText">This door does not open.</p>
+          </aside>
+
+          <aside class="youtube-pull" id="youtubePull" aria-hidden="true">
+            <div class="play-mark"></div>
+            <p>opening YouTube...</p>
+          </aside>
+
+          <div class="home-indicator"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
