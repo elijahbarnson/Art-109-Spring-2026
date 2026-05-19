@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Venom Scroll World</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: Arial, Helvetica, sans-serif;
+      overflow: auto;
+    }
+
+    body {
+      min-width: 100vw;
+      min-height: 100vh;
+    }
+
+    .info {
+      position: fixed;
+      top: 18px;
+      left: 18px;
+      z-index: 20;
+      background: rgba(255,255,255,0.92);
+      padding: 14px 16px;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 12px;
+      max-width: 360px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      backdrop-filter: blur(6px);
+    }
+
+    .info h1 {
+      margin: 0 0 8px 0;
+      font-size: 18px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .info p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.45;
+      color: rgba(0,0,0,0.72);
+    }
+
+    #canvas-holder {
+      width: 4200px;
+      height: 2800px;
+      position: relative;
+      background: white;
+    }
+
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="info">
+    <h1>Hello!</h1>
+    <p>
+      Drag your mouse to generate cool, moving black strings!
+    </p>
+  </div>
+
+  <div id="canvas-holder"></div>
+
+  <script src="sketch.js"></script>
+</body>
+</html>

@@ -39,7 +39,7 @@ window.addEventListener("scroll", () => {
 
     whispers.forEach((whisper, index) => {
 
-        let movement = scrollPosition * 0.02 * (index + 1);
+        let movement = scrollPosition * 0.02 * (index + 1);``
 
         whisper.style.transform =
             `translateY(${movement}px)`;
